@@ -52,7 +52,7 @@ public class QueueArray {
 		
 	}
 	
-	public  void ShowQueue() {
+	public static  void ShowQueue() {
 		for(int i=0; i< size; i++) {
 			System.out.println( i+1 +".- " + Array[i]);
 			System.out.println();
@@ -73,10 +73,39 @@ public class QueueArray {
 	
 	
 	public static void main(String[] args) {
-		QueueArray a = new QueueArray(Integer.parseInt(JOptionPane.showInputDialog(null,"Introduce el numero de datos a introduccir")))  ;
-		//a.enqueue(Integer.parseInt(JOptionPane.showInputDialog(null,"Introduce un valor nuevo")));
-		a.dequeue();
-		a.ShowQueue();
+		
+		int n=1;
+		while (n != 5){
+		
+			n=(Integer.parseInt(JOptionPane.showInputDialog(null,"1.-crear nueva queue \n 2.- enqueue \n 3.-dequeue \n 4.-is empty? \n 5.-exit")));
+			if(n>5 || n<1) {
+				System.out.println("parametro invalido");
+			}
+			else {
+				if(n==1) {
+					QueueArray a = new QueueArray(Integer.parseInt(JOptionPane.showInputDialog(null,"Introduce el numero de datos a introduccir")))  ;
+					ShowQueue();
+				}
+				if(n==2) {
+					enqueue(Integer.parseInt(JOptionPane.showInputDialog(null,"Introduce un valor nuevo")));
+					ShowQueue();
+				}
+				if(n==3) {
+					dequeue();
+					ShowQueue();
+				}
+				if(n==4) {
+					isEmpty();
+				}
+				if(n==5) {
+					n=5;
+					JOptionPane.showMessageDialog(null,"programa finalizado");
+				}
+				
+				
+				
+			}
+		}
 		
 	
 	}
