@@ -1,0 +1,83 @@
+import java.lang.reflect.Array;
+
+import javax.swing.JOptionPane;
+
+public class QueueArray {
+	 static int[] Array;
+	static int size;
+	public QueueArray(int size) {
+		this.size=size;
+		this.Array = new int[size];
+		
+		for(int i=0; i<size;i++){
+			Array[i]= Integer.parseInt(JOptionPane.showInputDialog(null,"Introduce un valor para la pocision " + (i+1) + " "));
+			
+		}
+		
+		
+	}
+	
+	public static void enqueue(int Value) {
+		if(isEmpty()) {
+			
+			for(int i=0; i<Array.length;i++) {
+				if(Array[i] == 0) {
+					Array[i]=Value;
+					break;
+				}
+			}
+			
+			
+		}
+		else {
+			System.out.println("La fila esta llena");
+		}
+		
+		
+	}
+	
+	public static void dequeue() {
+		Array[0]=0;
+		for(int i=1; i<Array.length; i++) {
+				
+				Array[i-1]= Array[i];
+				if(i==(Array.length-1)) {
+					Array[i]=0;
+				}
+			
+			
+		}
+		
+		
+		
+	}
+	
+	public  void ShowQueue() {
+		for(int i=0; i< size; i++) {
+			System.out.println( i+1 +".- " + Array[i]);
+			System.out.println();
+			
+		}
+		
+	}
+	
+	public static boolean isEmpty() {
+		if(Array[Array.length-1]==0) {
+			//System.out.println("La fila esta vacia");
+			return true;
+		}
+		return false;
+		
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		QueueArray a = new QueueArray(Integer.parseInt(JOptionPane.showInputDialog(null,"Introduce el numero de datos a introduccir")))  ;
+		//a.enqueue(Integer.parseInt(JOptionPane.showInputDialog(null,"Introduce un valor nuevo")));
+		a.dequeue();
+		a.ShowQueue();
+		
+	
+	}
+}
