@@ -1,4 +1,4 @@
-package data;
+
 
 
 public class SparseMatrix<T> {
@@ -87,7 +87,7 @@ public class SparseMatrix<T> {
 		System.out.println("Is empty: " + matrix.isEmpty());
 		System.out.println("Length: " + matrix.getLenght());
 		
-		System.out.println("–––––––––––––Sparse Matrix––––––––––––");
+		System.out.println("â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“Sparse Matrixâ€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“");
 		
 		matrix.removeSparseData2(0,0,0);
 		matrix.display();
