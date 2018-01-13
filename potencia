@@ -1,0 +1,31 @@
+
+import javax.swing.JOptionPane;
+
+public class Potencia {
+
+	public static double potencia(int base, int exponente) {
+		if(exponente == 0){
+			return 1;
+		}else {
+			
+			return ( base * potencia(base, exponente-1));
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		String key="yes";
+		
+	
+		while(key != "no") {
+			
+		int base = Integer.parseInt((JOptionPane.showInputDialog("dame la base ")));
+		int exponente = Integer.parseInt((JOptionPane.showInputDialog("dame el exponente")));
+		System.out.println(potencia(base,exponente));
+		
+		key= JOptionPane.showInputDialog("desea hacer otra operacion?");
+		 }
+	 
+	}
+
+}
