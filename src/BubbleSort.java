@@ -1,46 +1,37 @@
+/***
+	 * Eutimio Machuca Parra
+	 * Binary Search
+	 * A01630244 
+	 * 
+	 * */
+public class BubbleSort{
 
-public class BubbleSort {
+    @SuppressWarnings("unused")
+    
+	private static <T extends Comparable <T>> void BubbleSort(T[] valores){
+        for (int i =valores.length-1; i>0; i--) {
+            for (int j=0; j<i; j++) {
+                if (valores[j].compareTo(valores[j + 1]) > 0) {
+                    swap(valores, j, j+1);
+                }
+            }
+        }
+    }
 
-	
-	public static void bubbleSort(int[] valores) {
+    public static <T> void swap(T[] valores, int i, int j){
+        T tmp = valores[j];
+        valores[j] = valores[i];
+        valores[i] = tmp;
+    }
+	public static <T> void imprimeArreglo(T[] arreglo) {
 		
-		for(int i=0; i < valores.length-1 ; i++) {
-			
-			for(int j=0; j < valores.length-1-i ;j++) {
-				if(valores[j]> valores[j+1]) {
-					swap(valores, j, j+1);
-				}
-			}
-			
-		}
-		
-	}
-	
-	
-	
-	public static void swap(int [] valores, int i, int j) {
-		
-		int tmp=valores[i];
-		valores[i]=valores[j];
-		valores[j]= tmp;
-	}
-	
-	
-	public static void imprimeArreglo(int[] arreglo) {
-		
-		for(int a: arreglo) {
+		for(T a: arreglo) {
 			System.out.println(a + ", ");
 		}
 		System.out.println();
 	}
-	
-	
-	
-	public static void main(String[] args) {
-		int[] nums = {9,8,7,6,5,4,3,2,1};
-		bubbleSort(nums);
-		imprimeArreglo(nums);
-		
-	}
 
+    public static void main(String[] args) {
+        
+    }
 }
