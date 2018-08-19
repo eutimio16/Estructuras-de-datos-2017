@@ -1,6 +1,6 @@
 /*
  * 
- * Eutimio Machuca Parra A01630244
+ * EMP A01630244
  * Estructura de Datos
  * Tarea ya me hice bolas
  * 119/8/2018
